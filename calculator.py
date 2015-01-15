@@ -1,19 +1,3 @@
-"""
-calculator.py
-
-Using our arithmetic.py file from Exercise02, create the
-calculator program yourself in this file.
-
-Pseudocode for REPL:
-
-# No setup
-repeat forever:
-    read input
-    tokenize input
-    if the first token is 'q', quit
-    otherwise decide which math function to call based on the tokens we read
-"""
-
 from arithmetic import *
 def main():
     while True:
