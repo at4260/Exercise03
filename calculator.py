@@ -20,38 +20,40 @@ repeat forever:
 
 # if __name__ == '__main__':
 #     main()
-def add(num1, num2):
-    return num1 + num2
-
-def subtract(num1, num2):
-    return num1 - num2
-
-def multiply(num1, num2):
-    return num1 * num2 
-
-def divide(num1, num2):
-    return num1 / num2 
-
-def square(num1):
-    return num1 ** 2
-
-def cube(num1):
-    return num1 ** 3
-
-def power(num1, num2):
-    return num1 ** num2
-
-def mod(num1, num2):
-    return num1 % num2
+from arithmetic import *
 
 def calculate(user_input):
     while True:
-        tokens = user_input.split()
-        if tokens[0] == "+":
-            return add(token[1], token[2])
-        elif tokens[0] == "q":
+        token = user_input.split()
+        a_str = token[1]
+        b_str = token[2]
+        a = int(a_str)
+        b = int(b_str)
+        if token[0] == "+":
+            print add(a, b)
+            break
+        elif token[0] == "-":
+            return subtract(a, b)
+        elif token[0] == "*":
+            return multiply(a, b)
+        elif token[0] == "q":
             break
 
+# def divide(num1, num2):
+#     return num1 / num2 
 
-user_input = raw_input(">")
+# def square(num1):
+#     return num1 ** 2
+
+# def cube(num1):
+#     return num1 ** 3
+
+# def power(num1, num2):
+#     return num1 ** num2
+
+# def mod(num1, num2):
+#     return num1 % num2
+
+user_input = raw_input(">Enter equation")
+calculate(user_input)
         
