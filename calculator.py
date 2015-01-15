@@ -14,46 +14,59 @@ repeat forever:
     otherwise decide which math function to call based on the tokens we read
 """
 
-# def main():
-#     pass
-
-
-# if __name__ == '__main__':
-#     main()
 from arithmetic import *
-
-def calculate(user_input):
+def main():
     while True:
+        user_input = raw_input(">Enter equation")
         token = user_input.split()
-        a_str = token[1]
-        b_str = token[2]
-        a = int(a_str)
-        b = int(b_str)
         if token[0] == "+":
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
             print add(a, b)
-            break
         elif token[0] == "-":
-            return subtract(a, b)
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
+            print subtract(a, b)
         elif token[0] == "*":
-            return multiply(a, b)
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
+            print multiply(a, b)
+        elif token[0] == "/":
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
+            print divide(a, b)
+        elif token[0] == "square":
+            a_str = token[1]
+            a = int(a_str)
+            print square(a)
+        elif token[0] == "cube":
+            a_str = token[1]
+            a = int(a_str)
+            print cube(a)
+        elif token[0] == "pow":
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
+            print power(a, b)
+        elif token[0] == "mod":
+            a_str = token[1]
+            b_str = token[2]
+            a = int(a_str)
+            b = int(b_str)
+            print mod(a, b)
         elif token[0] == "q":
             break
+        else:
+            print "I don't understand"
 
-# def divide(num1, num2):
-#     return num1 / num2 
-
-# def square(num1):
-#     return num1 ** 2
-
-# def cube(num1):
-#     return num1 ** 3
-
-# def power(num1, num2):
-#     return num1 ** num2
-
-# def mod(num1, num2):
-#     return num1 % num2
-
-user_input = raw_input(">Enter equation")
-calculate(user_input)
-        
+if __name__ == '__main__':
+    main()
